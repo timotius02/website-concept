@@ -78,7 +78,7 @@ body {
         top: 370px;
         left: 60px;
         width: 350px;
-        h2 {
+        span {
             font-family: 'GibsonSemiBold', sans-serif;
             font-size: 2.5em;
         }
@@ -111,16 +111,52 @@ body {
 
 .red {
     position: relative;
+    left: 0;
     background-color: $red;
     height: 100%;
 }
 
+// .highlight {
+//   font-size: 1.5em;
+//   background: $yellow;
+//   margin: 0;
+//   padding: 2px;
+//   line-height: 1.5;
+//   box-shadow: -.166666667em 0 0 0 $yellow, .166666667em 0 0 0 $yellow;
+// }
 @keyframes rotate {
     from {
-        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        -webkit-transform: rotate(360deg);
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes translate {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes rotateBack {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes translateBack {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
     }
 }
 
@@ -136,10 +172,6 @@ body {
     display: block;
 }
 
-#container-gears {
-    // -webkit-animation: rotate 3s linear infinite;
-    // animation: rotate 3s linear infinite;
-}
 
 #container-gears *,
 #container-bolt * {
