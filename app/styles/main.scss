@@ -1,7 +1,7 @@
 // bower:scss
 // endbower
 $grey: #f1eceb;
-$red: #f00;
+$red: #ff3f05;
 $black: #1b1e25;
 $yellow: #ffe200;
 @font-face {
@@ -44,6 +44,7 @@ body {
 
 .col {
     flex: 1;
+    position: relative;
 }
 
 .page {
@@ -116,49 +117,6 @@ body {
     height: 100%;
 }
 
-// .highlight {
-//   font-size: 1.5em;
-//   background: $yellow;
-//   margin: 0;
-//   padding: 2px;
-//   line-height: 1.5;
-//   box-shadow: -.166666667em 0 0 0 $yellow, .166666667em 0 0 0 $yellow;
-// }
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    }
-}
-
-@keyframes translate {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes rotateBack {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes translateBack {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(100%);
-    }
-}
 
 #container-gears,
 #container-bolt {
@@ -172,42 +130,33 @@ body {
     display: block;
 }
 
-
-#container-gears *,
 #container-bolt * {
     position: absolute;
     box-sizing: content-box;
 }
 
+.center-child {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #circle {
     width: 300px;
     height: 300px;
     background-color: #fff;
     border-radius: 50%;
-    position: relative;
-    left: 50px;
-    top: 50px;
     border: 3px solid $black;
     box-shadow: 0 7px 7px rgba(0, 0, 0, .3);
-    .text {
-        font-family: 'GibsonSemiBold', sans-serif;
-        font-size: 10em;
-        text-align: center;
-        height: 180px;
-        margin: auto;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 10;
-    }
 }
 
-#bolt-01 {
+.bolt {
     width: 0;
     height: 0;
     border-bottom: 140px solid $yellow;
     border-left: 50px solid transparent;
+}
+#bolt-01 {
+    @extend .bolt;
     transform: rotate(0deg) skew(-5deg, -10deg);
     -ms-transform: rotate(0deg) skew(-5deg, -10deg);
     -webkit-transform: rotate(0deg) skew(-5deg, -10deg);
@@ -216,10 +165,7 @@ body {
 }
 
 #bolt-02 {
-    width: 0;
-    height: 0;
-    border-bottom: 140px solid $yellow;
-    border-left: 50px solid transparent;
+    @extend .bolt;
     transform: rotate(180deg) skew(-5deg, -10deg);
     -ms-transform: rotate(180deg) skew(-5deg, -10deg);
     -webkit-transform: rotate(180deg) skew(-5deg, -10deg);
@@ -227,71 +173,4 @@ body {
     left: 190px;
 }
 
-.gears {
-    border-bottom: 80px solid #fff;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    height: 0;
-    width: 60px;
-}
 
-#gear01 {
-    top: 0px;
-    left: 150px;
-}
-
-#gear02 {
-    bottom: 0px;
-    left: 150px;
-    -ms-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-#gear03 {
-    bottom: 165px;
-    left: -10px;
-    -ms-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-}
-
-#gear04 {
-    bottom: 165px;
-    right: -10px;
-    -ms-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-#gear05 {
-    top: 45px;
-    left: 260px;
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-#gear06 {
-    bottom: 50px;
-    left: 260px;
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-}
-
-#gear07 {
-    top: 45px;
-    right: 260px;
-    -ms-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-#gear08 {
-    bottom: 50px;
-    right: 260px;
-    -ms-transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-}
